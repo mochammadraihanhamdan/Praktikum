@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tes Kesehatan Online</title>
+  <!-- Link ke Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Styling untuk background dan elemen lainnya */
+    body {
+      background-color: #f8f9fa;
+      font-family: Arial, sans-serif;
+    }
+    .section-title {
+      margin-bottom: 30px;
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    .tes-card {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .tes-card:hover {
+      transform: scale(1.05);
+    }
+
+    .footer {
+      background-color: #343a40;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    .btn-primary-custom {
+      background-color: #007bff;
+      border-color: #007bff;
+    }
+
+    .btn-primary-custom:hover {
+      background-color: #0056b3;
+      border-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header / Hero Section -->
+
+  <!-- Daftar Tes Kesehatan -->
+  <div class="container my-5">
+    <h2 class="section-title text-center">Tes Kesehatan yang Tersedia</h2>
+    <div class="row">
+      <!-- Tes Kesehatan 1 -->
+      <div class="col-md-4 mb-4">
+        <div class="card tes-card">
+          <img src="https://via.placeholder.com/500x300.png?text=Tes+Kolesterol" class="card-img-top" alt="Tes Kolesterol">
+          <div class="card-body">
+            <h5 class="card-title">Tes Kolesterol</h5>
+            <p class="card-text">Tes untuk mengukur kadar kolesterol dalam darah, penting untuk mengetahui risiko penyakit jantung.</p>
+            <a href="#daftar" class="btn btn-primary-custom">Daftar Tes Kolesterol</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tes Kesehatan 2 -->
+      <div class="col-md-4 mb-4">
+        <div class="card tes-card">
+          <img src="https://via.placeholder.com/500x300.png?text=Tes+Diabetes" class="card-img-top" alt="Tes Diabetes">
+          <div class="card-body">
+            <h5 class="card-title">Tes Diabetes</h5>
+            <p class="card-text">Tes untuk mengetahui kadar gula darah dan apakah Anda berisiko terkena diabetes tipe 2.</p>
+            <a href="#daftar" class="btn btn-primary-custom">Daftar Tes Diabetes</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tes Kesehatan 3 -->
+      <div class="col-md-4 mb-4">
+        <div class="card tes-card">
+          <img src="https://via.placeholder.com/500x300.png?text=Tes+Tekanan+Darah" class="card-img-top" alt="Tes Tekanan Darah">
+          <div class="card-body">
+            <h5 class="card-title">Tes Tekanan Darah</h5>
+            <p class="card-text">Tes untuk mengukur tekanan darah Anda dan mengetahui apakah Anda memiliki hipertensi.</p>
+            <a href="#daftar" class="btn btn-primary-custom">Daftar Tes Tekanan Darah</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Formulir Pendaftaran -->
+  <div id="daftar" class="container my-5">
+    <h2 class="section-title text-center">Pendaftaran Tes Kesehatan</h2>
+    <form action="#" method="POST">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="nama" class="form-label">Nama Lengkap</label>
+          <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan Nama Lengkap" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" name="email" placeholder="Masukkan Email" required>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="tes" class="form-label">Pilih Tes Kesehatan</label>
+        <select class="form-select" id="tes" name="tes" required>
+          <option value="" disabled selected>Pilih Tes</option>
+          <option value="kolesterol">Tes Kolesterol</option>
+          <option value="diabetes">Tes Diabetes</option>
+          <option value="tekanan_darah">Tes Tekanan Darah</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary-custom w-100">Daftar Sekarang</button>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>&copy; 2024 Tes Kesehatan Online | Semua Hak Dilindungi</p>
+    <p>Email: info@teskesehatan.com | Telp: +62 123 456 789</p>
+  </div>
+
+  <!-- Script Bootstrap 5 -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

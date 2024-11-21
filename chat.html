@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocChat</title>
+    <!-- Link ke Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #d3d6da;
+        }
+        .chat-container {
+            height: 80vh;
+            overflow-y: auto;
+            border: 1px solid #1f4e7e;
+            border-radius: 5px;
+            padding: 15px;
+            background-color: rgb(223, 220, 220);
+        }
+        .message {
+            margin-bottom: 15px;
+        }
+        .message.user {
+            text-align: right;
+        }
+        .message.bot {
+            text-align: left;
+        }
+        .input-group {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 10px;
+           
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-4">
+        <h1 class="text-center">DocChat</h1>
+        <div class="chat-container" id="chatContainer">
+            <!-- Pesan akan ditambahkan di sini -->
+        </div>
+        <div class="input-group">
+            <input type="text" class="form-control" id="userInput" placeholder="Ketik pesan Anda..." aria-label="User  input">
+            <div class="input-group-append">
+                <button class="btn btn-primary" id="sendButton">Kirim</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link ke jQuery dan Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#sendButton').click(function() {
+                const userInput = $('#userInput').val();
+                if (userInput.trim() !== '') {
+                    // Tambahkan pesan pengguna ke chat
+                    $('#chatContainer').append(`
+                        <div class="message user">
+                            <strong>Anda:</strong> ${userInput}
+                        </div>
+                    `);
+                    $('#userInput').val(''); 
+
+                   
+                    setTimeout(() => {
+                        $('#chatContainer').append(`
+                            <div class="message bot">
+                                <strong>Bot Hai Doc:</strong> Terima kasih atas pesan Anda!, kami akan hubungkan anda dengan admin kami mohon tunggu selama setahun, dan jangan dulu berpindah rumah sakit karna dokter disini sedang ngaliwet
+                            </div>
+                        `);
+                        
+                        $('#chatContainer').scrollTop($('#chatContainer')[0].scrollHeight);
+                    }, 1000);
+                }
+            });
+
+            $('#userInput').keypress(function(e) {
+                if (e.which === 13) {
+                    $('#sendButton').click();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
